@@ -33,7 +33,9 @@ const displayCurrency = function () {
             }" alt="flag"></div>
             <div class="currencies__value">${data.base} / ${key}</div>
             
-            <div id="currencies-type" class="currencies__type">${parsedValue}</div>
+            <div id="currencies-type" class="currencies__type">${
+              parsedValue < 1.0001 ? 1.0001 : parsedValue
+            }</div>
             </div>`;
 
             newValue.push(Number(parsedValue));
